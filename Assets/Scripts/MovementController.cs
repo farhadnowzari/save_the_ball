@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Utils.InputUtils;
 
 public class MovementController : MonoBehaviour
 {
@@ -15,9 +14,24 @@ public class MovementController : MonoBehaviour
         mainRigidBody = GetComponent<Rigidbody2D>();   
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        setDirection();
+    }
+
+    void FixedUpdate()
+    {
+        move();
+    }
+
+    void setDirection() {
+        this.Direction = InputUtils.GoingRight() ? Direction2D.Right : Direction2D.Left;
+    }
+
+    void move() {
+        var movingHorizontaly = InputUtils.MovingHorizontaly();
+        var velocityX = movingHorizontaly ? Speed * (int)Direction : 0;
+        var velocityY = mainRigidBody.velocity.y;
+        mainRigidBody.velocity = new Vector2(velocityX, velocityY);
     }
 }
