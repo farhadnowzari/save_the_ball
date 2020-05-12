@@ -6,7 +6,7 @@ public class MovementController : MonoBehaviour
     #region Properties
     public Direction2D Direction;
     [Range(0, 100)]
-    public float Speed;
+    public float SpeedX;
     #endregion
     private Rigidbody2D mainRigidBody;  
     void Awake()
@@ -30,7 +30,7 @@ public class MovementController : MonoBehaviour
 
     void move() {
         var movingHorizontaly = InputUtils.MovingHorizontaly();
-        var velocityX = movingHorizontaly ? Speed * (int)Direction : 0;
+        var velocityX = movingHorizontaly ? SpeedX * (int)Direction : 0;
         var velocityY = mainRigidBody.velocity.y;
         mainRigidBody.velocity = new Vector2(velocityX, velocityY);
     }
