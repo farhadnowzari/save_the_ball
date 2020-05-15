@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 3393578269596917842}
   - component: {fileID: 4610816343991619672}
   - component: {fileID: 7625584839169087527}
+  - component: {fileID: 5736317612001934005}
   m_Layer: 8
   m_Name: platform_short_textured
   m_TagString: Untagged
@@ -257,3 +258,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  MinimumHorizontalDistance: -2.5
+  MaximumHorizontalDistance: 2.5
+  MoveHorizontally: 0
+--- !u!114 &5736317612001934005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5436521613186142397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccda46761943274ea95b3b71889e594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionEffect: {fileID: 7934436323917842805, guid: 37b7d8b22d291c94b941bb501656d160,
+    type: 3}

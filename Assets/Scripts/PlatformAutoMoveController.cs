@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlatformAutoMoveController : MonoBehaviour
 {
     public float Speed;
+    public float MinimumHorizontalDistance;
+    public float MaximumHorizontalDistance;
+    public bool MoveHorizontally;
 
     private Rigidbody2D mainRigidBody;
     void Awake()
