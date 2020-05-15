@@ -9,11 +9,6 @@ public class PlatformAutoMoveController : MonoBehaviour
     void Awake()
     {
         mainRigidBody = GetComponent<Rigidbody2D>();
-        if(transform.position.x < 0) {
-            direction = Direction2D.Right;
-        } else {
-            direction = Direction2D.Left;
-        }
     }
     void Update()
     {
