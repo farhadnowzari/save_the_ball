@@ -18,15 +18,23 @@ public class EnvironmentController : MonoBehaviour
     }
 
     void SpawnPlatform() {
-        int shortPlatformsSpawned = 0;
-        MainPlatformRenderer.ShuffleShortPlatforms();
-        foreach(Transform placeholder in MainPlatformRenderer.ShortPlatformPlaceholders) {
-            if(shortPlatformsSpawned > 1) break;
-            shortPlatformsSpawned += 1;
-            var position = new Vector3(placeholder.position.x, placeholder.position.y, 0);
-            var platform = Instantiate(MainPlatformRenderer.ShortPlatform, position, Quaternion.identity);
-            MainPlatformRenderer.IncreaseSpeed();
-            platform.GetComponent<PlatformAutoMoveController>().Speed = MainPlatformRenderer.PlatformSpeed;
+        var lastPlaceholderIndex = MainPlatformRenderer.LastPlaceholderIndex;
+        var newPlaceholderIndex = Mathf.Abs(lastPlaceholderIndex - 1);
+        var placeholder = MainPlatformRenderer.Placeholders[newPlaceholderIndex];
+        var platformType = PlatformUtils.RandomizePlatformType();
+        GameObject platform = null;
+        if(platformType == PlatformType.LongPlatform) {
+            platform = MainPlatformRenderer.LongPlatform;
+        } else if(platformType == PlatformType.ShortPlatform) {
+            platform = MainPlatformRenderer.ShortPlatform;
+        } else {
+            platform = MainPlatformRenderer.SinglePlatform;
         }
+        var position = new Vector3(placeholder.position.x, placeholder.position.y, 0);
+        MainPlatformRenderer.IncreaseSpeed();
+        platform = Instantiate(platform, position, Quaternion.identity);
+        var platformMovementController = platform.GetComponent<PlatformAutoMoveController>();
+        platformMovementController.Speed = MainPlatformRenderer.PlatformSpeed;
+        MainPlatformRenderer.LastPlaceholderIndex = newPlaceholderIndex;
     }
 }
