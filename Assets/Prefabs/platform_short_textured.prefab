@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 4610816343991619672}
   - component: {fileID: 7625584839169087527}
   - component: {fileID: 5736317612001934005}
+  - component: {fileID: 9030381406898387524}
   m_Layer: 8
   m_Name: platform_short_textured
   m_TagString: Untagged
@@ -195,6 +196,8 @@ Transform:
   m_Children:
   - {fileID: 8361960295269389814}
   - {fileID: 2412263358501525317}
+  - {fileID: 2045920459913289716}
+  - {fileID: 6730065099933129815}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -232,19 +235,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5436521613186142397}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7625584839169087527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,9 +261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
-  MinimumHorizontalDistance: -2.5
-  MaximumHorizontalDistance: 2.5
-  MoveHorizontally: 0
 --- !u!114 &5736317612001934005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,3 +275,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplosionEffect: {fileID: 7934436323917842805, guid: 37b7d8b22d291c94b941bb501656d160,
     type: 3}
+--- !u!114 &9030381406898387524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5436521613186142397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de21f40d8ba6ab248bb78f07d761a43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coin: {fileID: 8915626215604502204, guid: 806e053058a405b4c998ef30132f4cf6, type: 3}
+  Diamond: {fileID: 755241799884031850, guid: 61d2ac22662a7f94fb62d4adff98563a, type: 3}
+  Placeholders:
+  - {fileID: 2045920459913289716}
+  - {fileID: 6730065099933129815}
+  ProbabilityToSpawnAnItem: 85
+  ProbabilityToSpawnDiamond: 10
+  SpawnItems: 1
+--- !u!1 &7152021497336475763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045920459913289716}
+  m_Layer: 8
+  m_Name: item_spawn_1
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045920459913289716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152021497336475763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8643538115879669416}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7791083780948824721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6730065099933129815}
+  m_Layer: 8
+  m_Name: item_spawn_2
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6730065099933129815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791083780948824721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8643538115879669416}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
