@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 755241799884031852}
   - component: {fileID: 755241799884031851}
   - component: {fileID: 755241799884031854}
-  - component: {fileID: 755241799884031855}
   - component: {fileID: 5237715265690632775}
+  - component: {fileID: 755241799884031855}
   m_Layer: 0
   m_Name: diamond
   m_TagString: Untagged
@@ -131,19 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &755241799884031855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755241799884031850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcbde402abe49b943aeb0708a8cfebe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bonus: 0
 --- !u!50 &5237715265690632775
 Rigidbody2D:
   serializedVersion: 4
@@ -165,6 +152,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &755241799884031855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755241799884031850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbde402abe49b943aeb0708a8cfebe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bonus: 50
 --- !u!1 &5005053885532558816
 GameObject:
   m_ObjectHideFlags: 0

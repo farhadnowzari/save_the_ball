@@ -5,17 +5,19 @@ public class MovementController : MonoBehaviour
 {
     #region Properties
     public Direction2D Direction;
+    public GameObject Skin;
     private Direction2D direction;
     [Range(0, 100)]
     public float SpeedX;
     #endregion
     private Rigidbody2D mainRigidBody;
-
-    private Animator animator;
+    private SpriteRenderer skinSpriteRenderer;
+    private Animator skinAnimator;
     void Awake()
     {
         mainRigidBody = GetComponent<Rigidbody2D>();   
-        animator = GetComponent<Animator>();
+        skinSpriteRenderer = Skin.GetComponent<SpriteRenderer>();
+        skinAnimator = Skin.GetComponent<Animator>();
         direction = Direction;
     }
 
@@ -34,7 +36,7 @@ public class MovementController : MonoBehaviour
         if(!InputUtils.MovingHorizontaly()) return;
         this.Direction = InputUtils.GoingRight() ? Direction2D.Right : Direction2D.Left;
         if((Direction == Direction2D.Left || Direction == Direction2D.Right) && direction != Direction) {
-            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, 0);
+            skinSpriteRenderer.flipX = !skinSpriteRenderer.flipX;
             direction = Direction;
         }
     }
@@ -48,14 +50,14 @@ public class MovementController : MonoBehaviour
 
     void runAnimations() {
         if(mainRigidBody.velocity.y < 0) {
-            animator.SetBool("grounded", true);
+            skinAnimator.SetBool("grounded", true);
         } else {
-            animator.SetBool("grounded", false);
+            skinAnimator.SetBool("grounded", false);
         }
         if(InputUtils.MovingHorizontaly()) {
-            animator.SetFloat("speed", 1);
+            skinAnimator.SetFloat("speed", 1);
         } else {
-            animator.SetFloat("speed", 0);
+            skinAnimator.SetFloat("speed", 0);
         }
     }
 }

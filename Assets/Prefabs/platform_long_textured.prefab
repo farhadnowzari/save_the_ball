@@ -307,7 +307,7 @@ MonoBehaviour:
   - {fileID: 2618317471493486397}
   - {fileID: 5843515956608418277}
   - {fileID: 8426625040833566936}
-  ProbabilityToSpawnAnItem: 85
+  ProbabilityToSpawnAnItem: 50
   ProbabilityToSpawnDiamond: 5
   SpawnItems: 1
 --- !u!1 &6211281652776218770

@@ -45,6 +45,8 @@ public class TrapController : MonoBehaviour
         if(targetObject.layer == (int)Layers.Platform) {
             var platformController = targetObject.GetComponent<PlatformController>();
             platformController.DestroyMe();
+        } else {
+            Destroy(targetObject);
         }
     }
 }

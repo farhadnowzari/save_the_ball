@@ -11,7 +11,7 @@ public class PlatformItemsController : MonoBehaviour
     public float ProbabilityToSpawnAnItem;
     [Range(0, 100)]
     public float ProbabilityToSpawnDiamond;
-    public bool SpawnItems = true;
+    public bool SpawnItems;
 
     void Awake()
     {
@@ -23,7 +23,6 @@ public class PlatformItemsController : MonoBehaviour
                 continue;
             }
             spawnItem(Coin, placeholder);
-
         }
     }
 
