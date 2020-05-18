@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbde402abe49b943aeb0708a8cfebe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bonus: 50
+  Bonus: 20
   BonusColor: {r: 0.9056604, g: 0.07262372, b: 0.87870127, a: 1}
 --- !u!1 &5005053885532558816
 GameObject:

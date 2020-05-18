@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbde402abe49b943aeb0708a8cfebe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bonus: 10
+  Bonus: 1
   BonusColor: {r: 1, g: 0.875397, b: 0, a: 1}
 --- !u!1 &8915626215990759596
 GameObject:

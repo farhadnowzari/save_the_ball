@@ -7,5 +7,9 @@ namespace Utils.ScoreUtils {
                 playerScoreController.GiveScore(point, textColor);
             }
         }
+        
+        public static string FormatScore(this int score, int leadingZeros = 4) {
+            return score.ToString("D" + leadingZeros);
+        }
     }
 }

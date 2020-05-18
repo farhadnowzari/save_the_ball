@@ -6,3 +6,9 @@ public enum Direction2D {
 public enum Layers {
     Platform = 8
 }
+
+public enum Tags {
+    Player,
+    Enemy,
+    Item
+}
