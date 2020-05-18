@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bonus: 10
+  BonusColor: {r: 1, g: 0.875397, b: 0, a: 1}
 --- !u!1 &8915626215990759596
 GameObject:
   m_ObjectHideFlags: 0

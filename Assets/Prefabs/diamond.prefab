@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bonus: 50
+  BonusColor: {r: 0.9056604, g: 0.07262372, b: 0.87870127, a: 1}
 --- !u!1 &5005053885532558816
 GameObject:
   m_ObjectHideFlags: 0

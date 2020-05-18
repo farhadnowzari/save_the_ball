@@ -9,14 +9,15 @@ public class PlayerScoreController : MonoBehaviour
     public Transform TextPlaceholder;
     public GameObject TextMesh;
 
-    public void GiveScore(float point) {
-        showText(point);
+    public void GiveScore(float point, Color textColor) {
+        showText(point, textColor);
         PlayerScore += point;
     }
     
-    void showText(float point) {
+    void showText(float point, Color textColor) {
         var textMeshComponent = TextMesh.GetComponent<TextMesh>();
         textMeshComponent.text = point.ToString();
+        textMeshComponent.color = textColor;
         var position = new Vector3(TextPlaceholder.position.x, TextPlaceholder.position.y, 0);
         var textMesh = Instantiate(TextMesh, position, Quaternion.identity, transform);
     }

@@ -292,7 +292,7 @@ MonoBehaviour:
   Placeholders:
   - {fileID: 2045920459913289716}
   - {fileID: 6730065099933129815}
-  ProbabilityToSpawnAnItem: 85
+  ProbabilityToSpawnAnItem: 70
   ProbabilityToSpawnDiamond: 10
   SpawnItems: 1
 --- !u!1 &7152021497336475763

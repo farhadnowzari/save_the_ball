@@ -127,8 +127,8 @@ MonoBehaviour:
   Diamond: {fileID: 755241799884031850, guid: 61d2ac22662a7f94fb62d4adff98563a, type: 3}
   Placeholders:
   - {fileID: 7287159782249537633}
-  ProbabilityToSpawnAnItem: 100
-  ProbabilityToSpawnDiamond: 40
+  ProbabilityToSpawnAnItem: 90
+  ProbabilityToSpawnDiamond: 50
   SpawnItems: 1
 --- !u!1 &2315099914040952697
 GameObject:
