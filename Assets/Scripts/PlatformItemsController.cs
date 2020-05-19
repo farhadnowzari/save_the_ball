@@ -28,8 +28,8 @@ public class PlatformItemsController : MonoBehaviour
 
     void Update()
     {
-        if(Game.CurrentScore % 50 == 0 && ProbabilityToSpawnAnItem < 100) {
-            ProbabilityToSpawnAnItem += 1;
+        if(Game.CurrentScore % 50 == 0 && ProbabilityToSpawnAnItem <= 98) {
+            ProbabilityToSpawnAnItem += 2;
         }    
     }
 
