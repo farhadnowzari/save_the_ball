@@ -12,3 +12,9 @@ public enum Tags {
     Enemy,
     Item
 }
+
+public enum GameState {
+    GameOver,
+    MainMenu,
+    Running,
+}

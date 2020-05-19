@@ -3897,6 +3897,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5565453975722291691, guid: c6d8a6a867fd2d844b87c7b6b528be4e,
+        type: 3}
+      propertyPath: DeathEffect
+      value: 
+      objectReference: {fileID: 8867627539387383682, guid: d0be24531f1b06b4cbf25d54da7a2e03,
+        type: 3}
+    - target: {fileID: 5565453975722291691, guid: c6d8a6a867fd2d844b87c7b6b528be4e,
+        type: 3}
+      propertyPath: BloodSplash
+      value: 
+      objectReference: {fileID: 1339478914136568453, guid: 6085a97fee7a3ff41bccc2bafbd5b866,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d8a6a867fd2d844b87c7b6b528be4e, type: 3}
 --- !u!1001 &5906988883979899905
@@ -3911,6 +3923,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: trap
       objectReference: {fileID: 0}
+    - target: {fileID: 5906988883088886948, guid: 29cd574db18c67b479caa2626191fdce,
+        type: 3}
+      propertyPath: BloodSplash
+      value: 
+      objectReference: {fileID: 1339478914136568453, guid: 6085a97fee7a3ff41bccc2bafbd5b866,
+        type: 3}
     - target: {fileID: 5906988883088886949, guid: 29cd574db18c67b479caa2626191fdce,
         type: 3}
       propertyPath: m_LocalPosition.x

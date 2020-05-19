@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2895618117633067076}
   - component: {fileID: 2895618117633067067}
   - component: {fileID: 2895618117633067066}
+  - component: {fileID: 5565453975722291691}
   m_Layer: 0
   m_Name: mask_dude
   m_TagString: Player
@@ -114,7 +115,19 @@ MonoBehaviour:
   TextPlaceholder: {fileID: 2895618117841223161}
   TextMesh: {fileID: 5055286083718716423, guid: b61e236ca981e784791b8914905c522f,
     type: 3}
-  RandomizedIntensity: {x: 1, y: 0}
+--- !u!114 &5565453975722291691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895618117633067065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a514a41bc4c289642b4c74f07aacd489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathEffect: {fileID: 0}
 --- !u!1 &2895618117841223160
 GameObject:
   m_ObjectHideFlags: 0

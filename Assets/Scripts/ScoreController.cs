@@ -15,7 +15,7 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player == null) return;
+        if(Game.Ended) return;
         var playerScore = playerScoreController.PlayerScore;
         ScoreText.text = ((int)playerScore).FormatScore(6);
     }

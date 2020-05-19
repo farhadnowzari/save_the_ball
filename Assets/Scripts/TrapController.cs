@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TrapController : MonoBehaviour
 {
+    public GameObject BloodSplash;
     public List<GameObject> Saws;
     public float SawSpeed;
     public float MinimumHorizontalDistance;
@@ -45,6 +46,13 @@ public class TrapController : MonoBehaviour
         if(targetObject.layer == (int)Layers.Platform) {
             var platformController = targetObject.GetComponent<PlatformController>();
             platformController.DestroyMe();
+        } else if(targetObject.tag == Tags.Player.ToString()) {
+            var playerController = targetObject.GetComponent<PlayerController>();
+            foreach(var saw in Saws) {
+                var position = new Vector2(saw.transform.position.x, saw.transform.position.y + 1.5f);
+                Instantiate(BloodSplash, position, Quaternion.identity, saw.transform);
+            }
+            playerController.Die();
         } else {
             Destroy(targetObject);
         }

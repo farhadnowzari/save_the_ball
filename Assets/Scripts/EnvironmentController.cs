@@ -12,7 +12,7 @@ public class EnvironmentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MainPlatformRenderer.CanSpawn()) {
+        if(MainPlatformRenderer.CanSpawn() && !Game.Ended) {
             SpawnPlatform();
         }
     }
@@ -36,5 +36,14 @@ public class EnvironmentController : MonoBehaviour
         var platformMovementController = platform.GetComponent<PlatformAutoMoveController>();
         platformMovementController.Speed = MainPlatformRenderer.PlatformSpeed;
         MainPlatformRenderer.LastPlaceholderIndex = newPlaceholderIndex;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        var targetObject = other.gameObject;
+        if(targetObject.tag == Tags.Player.ToString()) {
+            var playerController = targetObject.GetComponent<PlayerController>();
+            playerController.Die();
+        }        
     }
 }
