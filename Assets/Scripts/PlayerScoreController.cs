@@ -12,6 +12,7 @@ public class PlayerScoreController : MonoBehaviour
     public void GiveScore(float point, Color textColor) {
         showText(point, textColor);
         PlayerScore += point;
+        Game.CurrentScore = PlayerScore;
     }
     
     void showText(float point, Color textColor) {

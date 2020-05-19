@@ -5,6 +5,7 @@ using UnityEngine;
 public static class Game
 {
     public static GameState State = GameState.Running;
+    public static float CurrentScore = 0;
 
     public static bool Ended {
         get {

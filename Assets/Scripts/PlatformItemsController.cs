@@ -26,6 +26,13 @@ public class PlatformItemsController : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if(Game.CurrentScore % 50 == 0 && ProbabilityToSpawnAnItem < 100) {
+            ProbabilityToSpawnAnItem += 1;
+        }    
+    }
+
     bool canSpawnItem() {
         var randomNumber = Random.Range(0, 101);
         return randomNumber <= ProbabilityToSpawnAnItem;
