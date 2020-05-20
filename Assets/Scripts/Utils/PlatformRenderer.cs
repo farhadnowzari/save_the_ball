@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using System;
 using UnityEngine;
 
 namespace Utils.PlatformRenderer {
@@ -11,6 +9,7 @@ namespace Utils.PlatformRenderer {
     }
     [System.Serializable]
     public class PlatformRenderer {
+        public List<GameObject> Walls;
         public List<Transform> Placeholders;
         public GameObject ShortPlatform;
         public GameObject LongPlatform;

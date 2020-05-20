@@ -252,7 +252,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -307,8 +307,8 @@ MonoBehaviour:
   - {fileID: 2618317471493486397}
   - {fileID: 5843515956608418277}
   - {fileID: 8426625040833566936}
-  ProbabilityToSpawnAnItem: 50
-  ProbabilityToSpawnDiamond: 2
+  ProbabilityToSpawnAnItem: 60
+  ProbabilityToSpawnDiamond: 5
   SpawnItems: 1
 --- !u!1 &6211281652776218770
 GameObject:

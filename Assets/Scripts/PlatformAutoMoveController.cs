@@ -12,6 +12,10 @@ public class PlatformAutoMoveController : MonoBehaviour
     }
     void Update()
     {
+        if(Game.Ended) {
+            mainRigidBody.velocity = Vector2.zero;
+            return;
+        }
         mainRigidBody.velocity = Vector2.up * Speed;
     }
 }
