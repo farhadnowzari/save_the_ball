@@ -166,6 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bonus: 20
   BonusColor: {r: 0.9056604, g: 0.07262372, b: 0.87870127, a: 1}
+  GameAudio: {fileID: 0}
+  PickupSoundName: gem_pickup
 --- !u!1 &5005053885532558816
 GameObject:
   m_ObjectHideFlags: 0

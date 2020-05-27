@@ -95,6 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bonus: 1
   BonusColor: {r: 1, g: 0.875397, b: 0, a: 1}
+  GameAudio: {fileID: 0}
+  PickupSoundName: coin_pickup
 --- !u!1 &8915626215990759596
 GameObject:
   m_ObjectHideFlags: 0

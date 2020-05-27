@@ -4,6 +4,8 @@ using Utils.InputUtils;
 public class MovementController : MonoBehaviour
 {
     #region Properties
+    public AudioController GameAudio;
+    public string RunningSoundName;
     public Direction2D Direction;
     public GameObject Skin;
     private Direction2D direction;
