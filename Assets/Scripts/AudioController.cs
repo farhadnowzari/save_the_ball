@@ -1,11 +1,12 @@
-﻿using UnityEngine.Audio;
-using UnityEngine;
+﻿using UnityEngine;
 using Models.Sound;
+using Models.Playlist;
 using System.Collections.Generic;
 using System.Linq;
 public class AudioController : MonoBehaviour
 {
     public List<Sound>  Sounds;
+    public List<Playlist> Playlists;
     void Awake()
     {
         foreach(var sound in Sounds) {
@@ -16,11 +17,20 @@ public class AudioController : MonoBehaviour
             sound.Source.pitch = sound.Pitch;
             sound.Source.loop = sound.Loop;
         }
+        var playlist = Playlists.First();
+        playlist.RandomClip(gameObject);
+        playlist.Source.Play();
     }
 
-    public void Play(string name, float delay = 0) {
+    void Update()
+    {
+
+    }
+
+    public void Play(string name, float delay = 0, bool replay = true) {
         var sound = Sounds.FirstOrDefault(s => s.Name == name);
         if(sound == null) return;
+        if(!replay && sound.Source.isPlaying) return;
         sound.Source.PlayDelayed(delay);
     }
 
@@ -34,5 +44,6 @@ public class AudioController : MonoBehaviour
         var sound = Sounds.FirstOrDefault(s => s.Name == name);
         if(sound == null) return;
         if(!sound.Source.isPlaying) return;
+        sound.Source.Stop();
     }
 }

@@ -14,12 +14,10 @@ namespace Utils.PlatformRenderer {
         public GameObject ShortPlatform;
         public GameObject LongPlatform;
         public GameObject SinglePlatform;
-        public float MaximumTimeBetweenSpawn;
         public float PlatformSpeedIncrement;
         public float PlatformSpeed;
         public float PlatformMaxSpeed;
         public float TimeBetweenSpawn;
-        public float TimeBetweenSpawnIncrementor;
         private float timeBetweenSpawn;
         [HideInInspector]
         public int LastPlaceholderIndex {
@@ -43,9 +41,6 @@ namespace Utils.PlatformRenderer {
 
         public bool CanSpawn() {
             if(timeBetweenSpawn <= 0) {
-                if(TimeBetweenSpawn < MaximumTimeBetweenSpawn) {
-                    TimeBetweenSpawn += TimeBetweenSpawnIncrementor;
-                } 
                 timeBetweenSpawn = TimeBetweenSpawn;
                 return true;
             } else {
@@ -57,6 +52,7 @@ namespace Utils.PlatformRenderer {
         public void IncreaseSpeed() {
             if(this.PlatformSpeed < this.PlatformMaxSpeed) {
                 this.PlatformSpeed += this.PlatformSpeedIncrement;
+                Game.Speed = this.PlatformSpeed;
             }
         }
 
@@ -66,6 +62,10 @@ namespace Utils.PlatformRenderer {
                 return lastPlaceholerIndex;
             }
             return this.lastPlaceholerIndex;
+        }
+
+        public void SlowDown(float amount) {
+            PlatformSpeed -= amount;
         }
     }        
 }

@@ -10,16 +10,17 @@ public class PlayerScoreController : MonoBehaviour
     public GameObject TextMesh;
 
     public void GiveScore(float point, Color textColor) {
-        showText(point, textColor);
+        var playerController = gameObject.GetComponent<PlayerController>();
+        playerController.ShowText(buildText(point, textColor));
         PlayerScore += point;
         Game.CurrentScore = PlayerScore;
     }
     
-    void showText(float point, Color textColor) {
+    GameObject buildText(float point, Color textColor) {
         var textMeshComponent = TextMesh.GetComponent<TextMesh>();
         textMeshComponent.text = point.ToString();
         textMeshComponent.color = textColor;
-        var position = new Vector3(TextPlaceholder.position.x, TextPlaceholder.position.y, 0);
-        var textMesh = Instantiate(TextMesh, position, Quaternion.identity, transform);
+        textMeshComponent.characterSize = 1f;
+        return TextMesh;
     }
 }

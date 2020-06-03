@@ -302,6 +302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Coin: {fileID: 8915626215604502204, guid: 806e053058a405b4c998ef30132f4cf6, type: 3}
   Diamond: {fileID: 755241799884031850, guid: 61d2ac22662a7f94fb62d4adff98563a, type: 3}
+  SlowDownPotion: {fileID: 6677948871391382390, guid: 28327f33f4968724682b9f8d1db897e0,
+    type: 3}
+  SlowPotionSpawnThreshold: 12
   Placeholders:
   - {fileID: 5684027877390708793}
   - {fileID: 2618317471493486397}
@@ -309,6 +312,7 @@ MonoBehaviour:
   - {fileID: 8426625040833566936}
   ProbabilityToSpawnAnItem: 60
   ProbabilityToSpawnDiamond: 5
+  ProbabilityToSpawnSlowDownPotion: 20
   SpawnItems: 1
 --- !u!1 &6211281652776218770
 GameObject:

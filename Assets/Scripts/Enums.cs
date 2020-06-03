@@ -18,3 +18,7 @@ public enum GameState {
     MainMenu,
     Running,
 }
+
+public enum PotionType {
+    SlowdownFalling
+}

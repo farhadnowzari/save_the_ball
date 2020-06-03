@@ -4,10 +4,10 @@ using Utils.InputUtils;
 public class MovementController : MonoBehaviour
 {
     #region Properties
-    public AudioController GameAudio;
-    public string RunningSoundName;
     public Direction2D Direction;
     public GameObject Skin;
+    public Transform GroundTouchPoint;
+    public LayerMask GroundLayerMask;
     private Direction2D direction;
     [Range(0, 100)]
     public float SpeedX;
@@ -15,6 +15,7 @@ public class MovementController : MonoBehaviour
     private Rigidbody2D mainRigidBody;
     private SpriteRenderer skinSpriteRenderer;
     private Animator skinAnimator;
+    private bool grounded;
     void Awake()
     {
         mainRigidBody = GetComponent<Rigidbody2D>();   
@@ -30,12 +31,15 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        move();
+        determinGrounded();
         runAnimations();
+        move();
     }
 
     void setDirection() {
-        if(!InputUtils.MovingHorizontaly()) return;
+        if(!InputUtils.MovingHorizontaly()) {
+            return;
+        }
         this.Direction = InputUtils.GoingRight() ? Direction2D.Right : Direction2D.Left;
         if((Direction == Direction2D.Left || Direction == Direction2D.Right) && direction != Direction) {
             skinSpriteRenderer.flipX = !skinSpriteRenderer.flipX;
@@ -50,12 +54,12 @@ public class MovementController : MonoBehaviour
         mainRigidBody.velocity = new Vector2(velocityX, velocityY);
     }
 
+    void determinGrounded() {
+        grounded = Physics2D.OverlapCircle(GroundTouchPoint.position, .02f, GroundLayerMask);
+    }
+
     void runAnimations() {
-        if(mainRigidBody.velocity.y < 0) {
-            skinAnimator.SetBool("grounded", true);
-        } else {
-            skinAnimator.SetBool("grounded", false);
-        }
+        skinAnimator.SetBool("grounded", grounded);
         if(InputUtils.MovingHorizontaly()) {
             skinAnimator.SetFloat("speed", 1);
         } else {

@@ -6,11 +6,16 @@ public class PlatformItemsController : MonoBehaviour
 {
     public GameObject Coin;
     public GameObject Diamond;
+    public GameObject SlowDownPotion;
+
+    public float SlowPotionSpawnThreshold;
     public List<Transform> Placeholders;
     [Range(0, 100)]
     public float ProbabilityToSpawnAnItem;
     [Range(0, 100)]
     public float ProbabilityToSpawnDiamond;
+    [Range(0, 100)]
+    public float ProbabilityToSpawnSlowDownPotion;
     public bool SpawnItems;
 
     void Awake()
@@ -18,6 +23,10 @@ public class PlatformItemsController : MonoBehaviour
         if(!SpawnItems) return;
         foreach(var placeholder in Placeholders) {
             if(!canSpawnItem()) continue;
+            if(canSpawnPotion()) {
+                spawnItem(SlowDownPotion, placeholder);
+                continue;
+            }
             if(canSpawnDiamond()) {
                 spawnItem(Diamond, placeholder);
                 continue;
@@ -30,7 +39,7 @@ public class PlatformItemsController : MonoBehaviour
     {
         if(Game.CurrentScore % 50 == 0 && ProbabilityToSpawnAnItem <= 98) {
             ProbabilityToSpawnAnItem += 2;
-        }    
+        }
     }
 
     bool canSpawnItem() {
@@ -40,6 +49,12 @@ public class PlatformItemsController : MonoBehaviour
     bool canSpawnDiamond() {
         var randomNumber = Random.Range(0, 101);
         return randomNumber <= ProbabilityToSpawnDiamond;
+    }
+
+    bool canSpawnPotion() {
+        if(SlowDownPotion == null) return false;
+        var randomNumber = Random.Range(0, 101);
+        return Game.Speed >= SlowPotionSpawnThreshold && randomNumber <= ProbabilityToSpawnSlowDownPotion;
     }
 
     void spawnItem(GameObject spawnItem, Transform placeholder) {

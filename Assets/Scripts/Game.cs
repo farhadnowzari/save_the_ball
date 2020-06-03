@@ -7,6 +7,8 @@ public static class Game
     public static GameState State = GameState.Running;
     public static float CurrentScore = 0;
 
+    public static float Speed = 3;
+
     public static bool Ended {
         get {
             return State == GameState.GameOver;

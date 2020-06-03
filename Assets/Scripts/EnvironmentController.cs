@@ -78,4 +78,8 @@ public class EnvironmentController : MonoBehaviour
             playerController.Die();
         }        
     }
+
+    public void SlowDown(float amount) {
+        MainPlatformRenderer.SlowDown(amount);
+    }
 }
