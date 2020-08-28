@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: -11
-  PointToRespawn: 10.8
+  PointToRespawn: 10.6
 --- !u!1 &487509990
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnPoint: -11
-  PointToRespawn: 10.9
+  PointToRespawn: 10.6
 --- !u!1 &886638871
 GameObject:
   m_ObjectHideFlags: 0

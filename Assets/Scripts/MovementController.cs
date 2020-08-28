@@ -4,6 +4,7 @@ using Utils.InputUtils;
 public class MovementController : MonoBehaviour
 {
     #region Properties
+    public bool Disabled;
     public Direction2D Direction;
     public GameObject Skin;
     public Transform GroundTouchPoint;
@@ -26,6 +27,7 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
+        if(Disabled) return;
         setDirection();
     }
 
@@ -33,6 +35,8 @@ public class MovementController : MonoBehaviour
     {
         determinGrounded();
         runAnimations();
+
+        if(Disabled) return;
         move();
     }
 
@@ -60,6 +64,7 @@ public class MovementController : MonoBehaviour
 
     void runAnimations() {
         skinAnimator.SetBool("grounded", grounded);
+        if(Disabled) return;
         if(InputUtils.MovingHorizontaly()) {
             skinAnimator.SetFloat("speed", 1);
         } else {
