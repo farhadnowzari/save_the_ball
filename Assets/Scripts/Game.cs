@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public static class Game
+public class Game
 {
-    public static GameState State = GameState.Running;
+    public static GameState State = GameState.MainMenu;
     public static float CurrentScore = 0;
 
     public static float Speed = 3;
